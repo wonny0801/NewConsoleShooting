@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <Windows.h>	//win32 API
 #include <time.h>
+#include <random>
 #include "Define.h"
 
-//#include "Player.h"
+#include "Unit.h"
+
+
 #include "Bullet.h"
 #include "Player.h"
+#include "Enemy.h"
+
 
 
 

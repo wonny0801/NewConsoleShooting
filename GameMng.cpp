@@ -42,3 +42,15 @@ void GameMng::CreateBullet(int x, int y)
 		}
 	}
 }
+
+void GameMng::CreateEnemy(int x, int y)
+{
+	for (int i = 0; i < D_ENEMY_MAX; i++)
+	{
+		if (Enemys[i].IsAlive == false)
+		{
+			Enemys[i].Enable(x, y);
+			break;
+		}
+	}
+}

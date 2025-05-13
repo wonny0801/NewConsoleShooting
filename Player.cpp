@@ -9,6 +9,7 @@ Player::Player()
 	body = 'A';
 	fColor = INTENSITY_WHITE;
 	bColor = BLACK;
+	IsAlive = true;
 	bulletCoolTime = 0;
 }
 
@@ -24,10 +25,7 @@ void Player::Update()
 	
 }
 
-void Player::Draw()
-{
-	DrawChar(x, y, body, fColor, bColor);
-}
+
 
 void Player::Move()
 {
@@ -72,10 +70,3 @@ void Player::FireBullet()
 	
 }
 
-//void Player::PressSpace()
-//{
-//	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
-//	{ 
-//		FireBullet();
-//	}
-//}
