@@ -4,6 +4,7 @@ GameMng::GameMng()
 {
 	enemycooltime = 0;
 	
+
 }
 
 GameMng::~GameMng()
@@ -30,6 +31,8 @@ void GameMng::Update()
 		CreateEnemy(rand() % 120, 0);
 	}
 
+	smash();
+	
 	for (int i = 0; i < D_EFFECT_MAX; i++)
 	{
 		Effects[i].Update();
@@ -44,14 +47,16 @@ void GameMng::Draw()
 	{
 		bullets[i].Draw();
 	}
-	for (int i = 0; i < D_BULLET_MAX; i++)
+	for (int i = 0; i < D_ENEMY_MAX; i++)
 	{
 		Enemys[i].Draw();
 	}
-	for (int i = 0; i < D_BULLET_MAX; i++)
+	for (int i = 0; i < D_EFFECT_MAX; i++)
 	{
 		Effects[i].Draw();
 	}
+
+	score.Draw();
 }
 
 void GameMng::CreateBullet(int x, int y)
@@ -78,3 +83,45 @@ void GameMng::CreateEnemy(int x, int y)
 		}
 	}
 }
+
+void GameMng::smash()
+{
+
+		for (int i = 0; i < D_BULLET_MAX; i++)
+		{
+			if (bullets[i].IsAlive)
+			{
+				for (int j = 0; j < D_ENEMY_MAX; j++)
+				{
+					if (Enemys[j].IsAlive)
+					{
+						if (bullets[i].x == Enemys[j].x && 
+							(bullets[i].y == Enemys[j].y || bullets[i].y + 1 == Enemys[j].y))
+						{
+							Enemys[j].Disable();
+							CreateEffect(Enemys[j].x,Enemys[j].y);
+							score.ScorePlus();
+							break;
+						}
+					}
+				}
+			}
+		}
+		
+}
+
+
+void GameMng::CreateEffect(int x, int y)
+{
+	
+		for (int i = 0; i < D_EFFECT_MAX; i++)
+		{
+			if (Effects[i].IsAlive == false)
+			{
+				Effects[i].Enable(x,y);
+				break;
+			}
+		}
+	
+}
+

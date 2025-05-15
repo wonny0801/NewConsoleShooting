@@ -1,22 +1,6 @@
 #pragma once
 
-//struct Effect
-//{
-//	int x;
-//	int y;
-//	WORD fColor;
-//	WORD bColor;
-//	bool IsAlive;
-//
-//	int index;
-//	DWORD indexUpdateTime;
-//};
-//
-//void EffectInit();
-//void EffectUpdate();
-//void EffectDraw();
-//
-//void CreateEffect(int x, int y);
+
 
 class Effect: public Unit
 {
@@ -29,8 +13,10 @@ public:
 	~Effect();
 
 	
-	void EffectUpdate();
-	void EffectDraw();
+	void Update() override;
+	void Draw() override;
 	
-	void CreateEffect(int x, int y);
+	void Disable() override;
+	
+	//void CreateEffect(int x, int y);
 };

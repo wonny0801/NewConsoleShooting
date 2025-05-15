@@ -21,12 +21,9 @@ char ebody[3][3][3] =
 };
 Effect::Effect()
 {
-	x = 0;
-	y = 0;
 	fColor = GREEN;
 	bColor = BLACK;
-	IsAlive = false;
-
+	
 	index = -1;
 	indexUpdateTime = 0;
 }
@@ -35,68 +32,52 @@ Effect::~Effect()
 {
 }
 
-void Effect::EffectUpdate()
+void Effect::Update()
 {
-	for (int i = 0; i < D_EFFECT_MAX; i++)
+	if (IsAlive)
 	{
-		if (gamemng.Effects[i].IsAlive)
+		if (indexUpdateTime < GetTickCount())
 		{
-			if (gamemng.Effects[i].indexUpdateTime < GetTickCount())
-			{
-				gamemng.Effects[i].index++;
-				gamemng.Effects[i].indexUpdateTime = GetTickCount() + 400;
+			index++;
+			indexUpdateTime = GetTickCount() + 300;
 
-				if (gamemng.Effects[i].index > 2)
-				{
-					gamemng.Effects[i].IsAlive = false;
-					gamemng.Effects[i].index = -1;
-					gamemng.Effects[i].indexUpdateTime = 0;
-				}
+			if (index > 2)
+			{
+				Disable();
 			}
 		}
 	}
+	
 }
 
-void Effect::EffectDraw()
+void Effect::Draw()
 {
-	for (int i = 0; i < D_EFFECT_MAX; i++)
+	
+	if (IsAlive)
 	{
-		if (gamemng.Effects[i].IsAlive)
-		{
-			DrawChar(gamemng.Effects[i].x - 1, gamemng.Effects[i].y - 1, ebody[gamemng.Effects[i].index][0][0],
-				gamemng.Effects[i].fColor, gamemng.Effects[i].bColor);
-			DrawChar(gamemng.Effects[i].x, gamemng.Effects[i].y - 1, ebody[gamemng.Effects[i].index][0][1],
-				gamemng.Effects[i].fColor, gamemng.Effects[i].bColor);
-			DrawChar(gamemng.Effects[i].x + 1, gamemng.Effects[i].y - 1, ebody[gamemng.Effects[i].index][0][2],
-				gamemng.Effects[i].fColor, gamemng.Effects[i].bColor);
+		DrawChar(x - 1, y - 1, ebody[index][0][0],fColor,bColor);
+		DrawChar(x, y - 1, ebody[index][0][1], fColor, bColor);
+		DrawChar(x + 1, y - 1, ebody[index][0][2], fColor, bColor);
 
-			DrawChar(gamemng.Effects[i].x - 1, gamemng.Effects[i].y, ebody[gamemng.Effects[i].index][1][0],
-				gamemng.Effects[i].fColor, gamemng.Effects[i].bColor);
-			DrawChar(gamemng.Effects[i].x, gamemng.Effects[i].y, ebody[gamemng.Effects[i].index][1][1],
-				gamemng.Effects[i].fColor, gamemng.Effects[i].bColor);
-			DrawChar(gamemng.Effects[i].x + 1, gamemng.Effects[i].y, ebody[gamemng.Effects[i].index][1][2],
-				gamemng.Effects[i].fColor, gamemng.Effects[i].bColor);
+		DrawChar(x - 1, y , ebody[index][1][0], fColor, bColor);
+		DrawChar(x, y , ebody[index][1][1], fColor, bColor);
+		DrawChar(x + 1, y, ebody[index][1][2], fColor, bColor);
 
-			DrawChar(gamemng.Effects[i].x - 1, gamemng.Effects[i].y + 1, ebody[gamemng.Effects[i].index][2][0],
-				gamemng.Effects[i].fColor, gamemng.Effects[i].bColor);
-			DrawChar(gamemng.Effects[i].x, gamemng.Effects[i].y + 1, ebody[gamemng.Effects[i].index][2][1],
-				gamemng.Effects[i].fColor, gamemng.Effects[i].bColor);
-			DrawChar(gamemng.Effects[i].x + 1, gamemng.Effects[i].y + 1, ebody[gamemng.Effects[i].index][2][2],
-				gamemng.Effects[i].fColor, gamemng.Effects[i].bColor);
-		}
+		DrawChar(x - 1, y + 1, ebody[index][2][0], fColor, bColor);
+		DrawChar(x , y + 1, ebody[index][2][1], fColor, bColor);
+		DrawChar(x + 1, y + 1, ebody[index][2][2], fColor, bColor);
+		
 	}
+	
 }
 
-void Effect::CreateEffect(int x, int y)
+void Effect::Disable()
 {
-	for (int i = 0; i < D_EFFECT_MAX; i++)
-	{
-		if (gamemng.Effects[i].IsAlive == false)
-		{
-			gamemng.Effects[i].IsAlive = true;
-			gamemng.Effects[i].x = x;
-			gamemng.Effects[i].y = y;
-			break;
-		}
-	}
+	IsAlive = false;
+	index = -1;
+	indexUpdateTime = 0;
 }
+
+
+
+

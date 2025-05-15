@@ -2,6 +2,8 @@
 #include <Windows.h>	//win32 API
 #include <time.h>
 #include <random>
+#include <string>
+#include <sstream>
 #include "Define.h"
 
 #include "Unit.h"

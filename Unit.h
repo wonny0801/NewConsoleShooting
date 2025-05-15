@@ -13,10 +13,10 @@ public:
 	bool IsAlive;
 
 	virtual void Update();
-	void Draw();
+	virtual void Draw();
 
-	void Enable(int x, int y);
-	void Disable();
+	virtual void Enable(int x, int y);
+	virtual void Disable();
 
 	
 };

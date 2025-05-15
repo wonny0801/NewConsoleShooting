@@ -12,11 +12,16 @@ public:
 	Enemy Enemys[D_ENEMY_MAX];
 	Effect Effects[D_EFFECT_MAX];
 
+	Score score;
+
 	void Update();
 	void Draw();
 
 	void CreateBullet(int x, int y);
 	void CreateEnemy(int x, int y);
+
+	void smash();
+	void CreateEffect(int x, int y);
 };
 
 extern GameMng gamemng;
