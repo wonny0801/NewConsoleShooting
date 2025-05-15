@@ -28,6 +28,12 @@
     <Filter Include="Unit">
       <UniqueIdentifier>{b7d68e0a-50a0-4545-89ed-fec679a6d6ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Score">
+      <UniqueIdentifier>{467ad030-f9c6-42ca-8b7f-75f6c666783a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effect">
+      <UniqueIdentifier>{e5cf70da-15f1-4fa4-9b8f-c88dc6c6527f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,6 +57,12 @@
     <ClCompile Include="Unit.cpp">
       <Filter>Unit</Filter>
     </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Score</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>Effect</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include.h">
@@ -73,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="Unit.h">
       <Filter>Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Score</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>Effect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,8 @@
 
 GameMng::GameMng()
 {
+	enemycooltime = 0;
+	
 }
 
 GameMng::~GameMng()
@@ -17,7 +19,21 @@ void GameMng::Update()
 	{
 		bullets[i].Update();
 	}
-	
+	for (int i = 0; i < D_BULLET_MAX; i++)
+	{
+		Enemys[i].Update(); 
+	}
+
+	if (enemycooltime < GetTickCount())
+	{
+		enemycooltime = GetTickCount() + 50;
+		CreateEnemy(rand() % 120, 0);
+	}
+
+	for (int i = 0; i < D_EFFECT_MAX; i++)
+	{
+		Effects[i].Update();
+	}
 	
 }
 
@@ -27,6 +43,14 @@ void GameMng::Draw()
 	for (int i = 0; i < D_BULLET_MAX; i++)
 	{
 		bullets[i].Draw();
+	}
+	for (int i = 0; i < D_BULLET_MAX; i++)
+	{
+		Enemys[i].Draw();
+	}
+	for (int i = 0; i < D_BULLET_MAX; i++)
+	{
+		Effects[i].Draw();
 	}
 }
 

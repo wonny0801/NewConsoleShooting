@@ -19,11 +19,13 @@ void Init()
 	SetConsoleCursorInfo(hScreen[0], &cci);
 	SetConsoleCursorInfo(hScreen[1], &cci);
 
+	
 }
 void Update()
 {
 	//PlayerUpdate();
 	gamemng.Update();
+	
 }
 void Draw()
 {

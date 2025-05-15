@@ -10,6 +10,8 @@
 #include "Bullet.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Score.h"
+#include "Effect.h"
 
 
 
@@ -27,3 +29,5 @@ void DrawChar(int x, int y, const char c, WORD fcolor, WORD bcolor);
 void EngineSync(int fps);
 void ClearScreen();
 void Flip();
+
+extern GameMng gamemng;
