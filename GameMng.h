@@ -5,6 +5,7 @@ public:
 	GameMng();
 	~GameMng();
 
+	//DWORD gamePlayTime;
 	DWORD enemycooltime;
 
 	Player player;
@@ -13,6 +14,7 @@ public:
 	Effect Effects[D_EFFECT_MAX];
 
 	Score score;
+	GameTime gametime;
 
 	void Update();
 	void Draw();
@@ -22,6 +24,9 @@ public:
 
 	void smash();
 	void CreateEffect(int x, int y);
+
+	bool gamePlayTimeCheck();
+	void TimeOver();
 };
 
 extern GameMng gamemng;

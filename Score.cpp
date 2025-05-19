@@ -40,6 +40,9 @@ Score::Score()
 
 	//sprintf_s(body, "SCORE : %d", GameScore); // 예시 1...
 	//body.assign("SCORE :" + std::to_string(GameScore)); // 예시 2...
+	/*std::ostringstream os;
+	os << "hi~";
+	score.body = os.str();*/
 	body = "SCORE : " + std::to_string(GameScore);
 	
 }
@@ -54,9 +57,7 @@ void Score::ScorePlus()
 	//sprintf_s(body, sizeof(body), "SCORE : %d", GameScore); // 문자열 업데이트
 	//body.assign("SCORE : %d", GameScore);
 
-	/*std::ostringstream os;
-	os << "hi~";
-	score.body = os.str();*/
+	
 
 	body.assign("SCORE :" + std::to_string(GameScore));
 }

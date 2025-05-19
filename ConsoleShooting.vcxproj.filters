@@ -34,6 +34,9 @@
     <Filter Include="Effect">
       <UniqueIdentifier>{e5cf70da-15f1-4fa4-9b8f-c88dc6c6527f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameTime">
+      <UniqueIdentifier>{856dc038-769f-4baa-ad53-974263215a68}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -63,6 +66,9 @@
     <ClCompile Include="Effect.cpp">
       <Filter>Effect</Filter>
     </ClCompile>
+    <ClCompile Include="gameTime.cpp">
+      <Filter>GameTime</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include.h">
@@ -91,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="Effect.h">
       <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="gameTime.h">
+      <Filter>GameTime</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

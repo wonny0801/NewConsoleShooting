@@ -133,6 +133,7 @@
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameMng.cpp" />
+    <ClCompile Include="gameTime.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Score.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="Effect.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameMng.h" />
+    <ClInclude Include="gameTime.h" />
     <ClInclude Include="include.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Score.h" />

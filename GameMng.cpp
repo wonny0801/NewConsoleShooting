@@ -3,7 +3,7 @@
 GameMng::GameMng()
 {
 	enemycooltime = 0;
-	
+	//gamePlayTime = GetTickCount();
 
 }
 
@@ -37,7 +37,7 @@ void GameMng::Update()
 	{
 		Effects[i].Update();
 	}
-	
+	gametime.Update();
 }
 
 void GameMng::Draw()
@@ -57,6 +57,7 @@ void GameMng::Draw()
 	}
 
 	score.Draw();
+	gametime.Draw();
 }
 
 void GameMng::CreateBullet(int x, int y)
@@ -123,5 +124,19 @@ void GameMng::CreateEffect(int x, int y)
 			}
 		}
 	
+}
+
+bool GameMng::gamePlayTimeCheck()
+{
+	return true;
+
+	if (gametime.gameTime <= 0)
+		return false;
+	
+}
+
+void GameMng::TimeOver()
+{
+	DrawStr(50, 15, score.body.c_str(), score.fColor, score.bColor);
 }
 

@@ -22,8 +22,11 @@ public:
 	Score();
 	~Score();
 
+	
+
+
 	int GameScore;
-	char body[50];
+	//char body[50];
 	std::string body;
 
 	void ScorePlus();
