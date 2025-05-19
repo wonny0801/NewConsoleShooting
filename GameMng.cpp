@@ -128,10 +128,10 @@ void GameMng::CreateEffect(int x, int y)
 
 bool GameMng::gamePlayTimeCheck()
 {
-	return true;
-
 	if (gametime.gameTime <= 0)
 		return false;
+
+	return true;
 	
 }
 
