@@ -35,6 +35,13 @@ void Draw()
 	
 	Flip(); // 화면전환, 이중버퍼링
 }
+void GameOverDraw()
+{
+	ClearScreen();
+	gamemng.TimeOver();
+	Flip();
+}
+
 void Release()
 {
 	CloseHandle(hScreen[0]);

@@ -18,9 +18,13 @@ int main()
 
 		EngineSync(30);
 	}
-
-	gamemng.TimeOver();
-	system("pause");
+	while (true)
+	{
+		GameOverDraw();
+	}
+	
+	
+	
 	Release();
 
 	return 0;

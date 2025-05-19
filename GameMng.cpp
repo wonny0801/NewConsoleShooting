@@ -25,11 +25,12 @@ void GameMng::Update()
 		Enemys[i].Update(); 
 	}
 
-	if (enemycooltime < GetTickCount())
+	/*if (enemycooltime < GetTickCount())
 	{
 		enemycooltime = GetTickCount() + 50;
 		CreateEnemy(rand() % 120, 0);
-	}
+	}*/
+	CreateEnemy(rand() % 120, 0);
 
 	smash();
 	

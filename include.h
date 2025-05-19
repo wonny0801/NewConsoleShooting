@@ -26,6 +26,7 @@ void Init();
 void Update();
 void Draw();
 void Release();
+void GameOverDraw();
 
 void DrawStr(int x, int y, const char* str, WORD fcolor, WORD bcolor);
 void DrawChar(int x, int y, const char c, WORD fcolor, WORD bcolor);
