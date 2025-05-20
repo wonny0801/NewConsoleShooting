@@ -1,5 +1,6 @@
 #pragma once
-class GameMng
+
+class GameMng : public Singleton<GameMng>
 {
 public:
 	GameMng();

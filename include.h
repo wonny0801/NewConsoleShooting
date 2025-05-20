@@ -6,6 +6,8 @@
 #include <sstream>
 #include "Define.h"
 
+#include "Singleton.h"
+
 #include "Unit.h"
 
 
@@ -15,6 +17,8 @@
 #include "Score.h"
 #include "Effect.h"
 #include "gameTime.h"
+
+
 
 
 

@@ -37,6 +37,9 @@
     <Filter Include="GameTime">
       <UniqueIdentifier>{856dc038-769f-4baa-ad53-974263215a68}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Singleton">
+      <UniqueIdentifier>{839345b7-7c72-4126-9c8a-d563460c856b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -100,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="gameTime.h">
       <Filter>GameTime</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Singleton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
