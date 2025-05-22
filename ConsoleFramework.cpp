@@ -1,9 +1,12 @@
 #include "include.h"
 
+template<typename T>
+T* Singleton<T>::instance = nullptr;
+
 int screenIndex;
 HANDLE hScreen[2];
 
-GameMng gamemng;
+//GameMng gamemng;
 
 //int x, y;
 
@@ -19,26 +22,32 @@ void Init()
 	SetConsoleCursorInfo(hScreen[0], &cci);
 	SetConsoleCursorInfo(hScreen[1], &cci);
 
-	
+	GameMng::Getles()->Init();
 }
 void Update()
 {
 	//PlayerUpdate();
-	gamemng.Update();
+	//gamemng.Update();
+
+	GameMng::Getles()->Update();
 	
 }
 void Draw()
 {
 	ClearScreen(); // 화면 지우기
 	//PlayerDraw();
-	gamemng.Draw();
+	//gamemng.Draw();
+
+	GameMng::Getles()->Draw();
 	
 	Flip(); // 화면전환, 이중버퍼링
 }
 void GameOverDraw()
 {
 	ClearScreen();
-	gamemng.TimeOver();
+	//gamemng.TimeOver();
+
+	//GameMng::Getles()->TimeOver();
 	Flip();
 }
 

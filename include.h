@@ -10,6 +10,9 @@
 
 #include "Unit.h"
 
+#include "State.h"
+#include "StateCtrl.h"
+
 
 #include "Bullet.h"
 #include "Player.h"
@@ -21,8 +24,8 @@
 
 
 
-
-
+#include "MenuState.h"
+#include "GameState.h"
 
 #include "GameMng.h"//관리자는 맨 밑에..
 
@@ -30,6 +33,7 @@ void Init();
 void Update();
 void Draw();
 void Release();
+
 void GameOverDraw();
 
 void DrawStr(int x, int y, const char* str, WORD fcolor, WORD bcolor);
@@ -38,4 +42,4 @@ void EngineSync(int fps);
 void ClearScreen();
 void Flip();
 
-extern GameMng gamemng;
+//extern GameMng gamemng;

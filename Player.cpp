@@ -65,7 +65,11 @@ void Player::FireBullet()
 {
 	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 	{
-		gamemng.CreateBullet(x, y);
+		//gamemng.CreateBullet(x, y);
+
+		//GameMng::Getles()->CreateBullet(x,y);
+		
+		((GameState*)GameMng::Getles()->statectrl.m_pStates[E_GAME])->CreateBullet(x, y);
 	}
 	
 }
