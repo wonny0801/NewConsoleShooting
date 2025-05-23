@@ -6,7 +6,16 @@ public:
 	GameMng();
 	~GameMng();
 
+	FMOD::System* system;
+
+	Sound background;
+	Sound bulletSound;
+
 	CStateCtrl statectrl;
+
+	void Init();
+	void Update();
+	void Draw();
 
 	//DWORD gamePlayTime;
 	/*DWORD enemycooltime;
@@ -18,10 +27,6 @@ public:
 
 	Score score;
 	GameTime gametime;*/
-
-	void Init();
-	void Update();
-	void Draw();
 
 	/*void CreateBullet(int x, int y);
 	void CreateEnemy(int x, int y);

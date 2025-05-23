@@ -42,7 +42,7 @@ void GameState::Update()
 	{
 		Effects[i].Update();
 	}
-	gametime.Update();
+	//gametime.Update();
 }
 
 void GameState::Draw()
@@ -63,7 +63,7 @@ void GameState::Draw()
 	}
 
 	score.Draw();
-	gametime.Draw();
+	//gametime.Draw();
 }
 
 void GameState::Exit()
@@ -77,6 +77,7 @@ void GameState::CreateBullet(int x, int y)
 		if (bullets[i].IsAlive == false)
 		{
 			bullets[i].Enable(x, y);
+			GameMng::Getles()->bulletSound.Play();
 			break;
 		}
 	}
@@ -130,15 +131,15 @@ void GameState::CreateEffect(int x, int y)
 	}
 }
 
-bool GameState::gamePlayTimeCheck()
-{
-	if (gametime.gameTime <= 0)
-		return false;
-
-	return true;
-}
-
-void GameState::TimeOver()
-{
-	DrawStr(50, 15, score.body.c_str(), score.fColor, score.bColor);
-}
+//bool GameState::gamePlayTimeCheck()
+//{
+//	if (gametime.gameTime <= 0)
+//		return false;
+//
+//	return true;
+//}
+//
+//void GameState::TimeOver()
+//{
+//	DrawStr(50, 15, score.body.c_str(), score.fColor, score.bColor);
+//}

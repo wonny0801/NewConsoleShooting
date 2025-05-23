@@ -12,17 +12,17 @@ int main()
 		EngineSync(30);
 	}
 	
-	/*while (GameMng::Getles()->gamePlayTimeCheck())
-	{
-		Update();
-		Draw();
+	///*while (GameMng::Getles()->gamePlayTimeCheck())
+	//{
+	//	Update();
+	//	Draw();
 
-		EngineSync(30);
-	}*/
-	while (true)
-	{
-		GameOverDraw();
-	}
+	//	EngineSync(30);
+	//}*/
+	//while (true)
+	//{
+	//	GameOverDraw();
+	//}
 	
 	
 	

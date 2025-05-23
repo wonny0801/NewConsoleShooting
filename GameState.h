@@ -13,7 +13,7 @@ public:
 	Effect Effects[D_EFFECT_MAX];
 
 	Score score;
-	GameTime gametime;
+	//GameTime gametime;
 
 	void Start() override;
 	void Update() override;
@@ -26,6 +26,6 @@ public:
 	void smash();
 	void CreateEffect(int x, int y);
 
-	bool gamePlayTimeCheck();
-	void TimeOver();
+	//bool gamePlayTimeCheck();
+	//void TimeOver();
 };

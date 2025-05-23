@@ -19,11 +19,22 @@ void GameMng::Init()
 	statectrl.StateAdd(E_GAME, new GameState());
 
 	statectrl.StateChange(E_MENU);
+
+	system = nullptr;
+	FMOD::System_Create(&system);
+	system->init(512, FMOD_INIT_NORMAL, nullptr);
+
+	bool result1 = background.LoadSound("Sound/backgroundMusic.mp3", true);
+	bool result2 = bulletSound.LoadSound("Sound/bullet.wav", false);
+
+	background.Play();
+
 }
 
 void GameMng::Update()
 {
 	statectrl.Update();
+	system->update();
 
 }
 
