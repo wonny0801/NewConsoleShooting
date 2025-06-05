@@ -15,10 +15,10 @@ GameMng::~GameMng()
 
 void GameMng::Init()
 {
-	statectrl.StateAdd(E_MENU, new MenuState());
-	statectrl.StateAdd(E_GAME, new GameState());
+	//statectrl.StateAdd(E_MENU, new MenuState());
+	//statectrl.StateAdd(E_GAME, new GameState());
 
-	statectrl.StateChange(E_MENU);
+	statectrl.StateChange(new MenuState);
 
 	system = nullptr;
 	FMOD::System_Create(&system);

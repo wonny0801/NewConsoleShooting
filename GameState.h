@@ -8,9 +8,11 @@ public:
 	DWORD enemycooltime;
 
 	Player player;
-	Bullet bullets[D_BULLET_MAX];
-	Enemy Enemys[D_ENEMY_MAX];
-	Effect Effects[D_EFFECT_MAX];
+	//Bullet bullets[D_BULLET_MAX];
+	std::vector<Bullet*> bullets;
+	std::vector<Enemy*> Enemys;
+	std::vector<Effect*> Effects;
+
 
 	Score score;
 	//GameTime gametime;

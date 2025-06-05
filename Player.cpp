@@ -69,7 +69,7 @@ void Player::FireBullet()
 
 		//GameMng::Getles()->CreateBullet(x,y);
 		
-		((GameState*)GameMng::Getles()->statectrl.m_pStates[E_GAME])->CreateBullet(x, y);
+		((GameState*)GameMng::Getles()->statectrl.m_pCurState)->CreateBullet(x, y);
 		//객체가 없는 클래스의 함수에 접근하는법...
 	}
 	
